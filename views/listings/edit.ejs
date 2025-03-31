@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Listings</title>
+</head>
+<body> -->
+
+    <% layout("layouts/boilerplate") %>
+
+    <div class="row mt-4">
+
+    <div class="col-8 offset-2">
+
+    <h1>Edit Your Listings</h1>
+
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="post">
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Title</label>
+            <input type="text" name="listing[title]" placeholder="Enter new title" value="<%= listing.title %>" class="form-control">
+        </div>
+        
+        <div class="mb-3">
+            <label for="price" class="form-label">Description</label>
+            <textarea name="listing[description]" placeholder="Description" rows="3" cols="20" class="form-control"><%= listing.description %></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">New Image Link</label>
+            <input type="text" name="listing[image]" placeholder="Enter new image" value="<%= listing.image %>" class="form-control">
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="listing[price]" placeholder="Enter new price" value="<%= listing.price %>" class="form-control">
+            </div>
+        
+            <div class="mb-3 col-md-8">
+                <label for="price" class="form-label">Location</label>
+                <input type="text" name="listing[location]" placeholder="Enter new location" value="<%= listing.location %>" class="form-control">
+            </div>
+
+        </div>  
+
+        <br>
+        <button class="btn btn-dark add-btn mb-4">Edit</button>
+    </form>
+  </div>
+</div>
+    
+<!-- </body>
+</html> -->
